@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
 <div class="home__main container">
-    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div>
         <h1>
             <?php the_field('home_section_title'); ?>
         </h1>
 
         <div class="avatar mobile">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/home-1.png" alt="Рамка" class="avatar-frame" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/home-1.png" alt="Рамка" class="avatar-frame" />
             <img src="<?php the_field('home_section_image'); ?>" alt="<?php the_field('home_section_title'); ?>" class="photo" />
         </div>
 
@@ -17,15 +17,15 @@
     </div>
     <div>
         <div class="avatar desktop">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/home-1.png" alt="Рамка" width="364" height="583" class="avatar-frame" />
+            <img src="<?php echo get_template_directory_uri(); ?> /images/home-1.png" alt="Рамка" width="364" height="583" class="avatar-frame" />
             <img src="<?php the_field('home_section_image'); ?>" alt="<?php the_field('home_section_title'); ?>" width="618" height="621" class="photo" />
         </div>
     </div>
 </div>
 </section>
 <section id="about">
-    <div id="bg-1_1" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-1.png" alt="bg_element-1"></div>
-    <div id="bg-2_1" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-2.png" alt="bg_element-2"></div>
+    <div id="bg-1_1" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-1.png" alt="bg_element-1"></div>
+    <div id="bg-2_1" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-2.png" alt="bg_element-2"></div>
     <div class="container">
         <div class="section__title-1">
             <h2><?php the_field('about_section_title'); ?></h2>
@@ -58,12 +58,12 @@
 
 <section id="advantages" class="section__bg">
 
-    <div id="bg-5_1" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-5.png" alt="bg_element-5"></div>
+    <div id="bg-5_1" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-5.png" alt="bg_element-5"></div>
     <div class="container">
         <div class="section__title-2">
             <h2><?php the_field('advantages_section_title'); ?>
-                <div id="bg-3_1" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-3.png" alt="bg_element-3"></div>
-                <div id="bg-4_1" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-4.png" alt="bg_element-4"></div>
+                <div id="bg-3_1" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-3.png" alt="bg_element-3"></div>
+                <div id="bg-4_1" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-4.png" alt="bg_element-4"></div>
             </h2>
         </div>
         <div class="section__collection">
@@ -100,16 +100,16 @@
 </section>
 
 <section id="reviews">
-    <div id="bg-2_2" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-2.png" alt="bg_element-2"></div>
-    <div id="bg-4_2" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-4.png" alt="bg_element-4"></div>
-    <div id="bg-6_1" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-6.png" alt="bg_element-6"></div>
+    <div id="bg-2_2" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-2.png" alt="bg_element-2"></div>
+    <div id="bg-4_2" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-4.png" alt="bg_element-4"></div>
+    <div id="bg-6_1" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-6.png" alt="bg_element-6"></div>
     <div class="container">
         <div class="section__title-1">
             <h2><?php the_field('reviews_section_title'); ?></h2>
         </div>
         <div class="section__collection">
             <div class="section__card" id="review-1">
-                <div id="bg-1_2" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-1.png" alt="bg_element-1"></div>
+                <div id="bg-1_2" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-1.png" alt="bg_element-1"></div>
                 <div class="title"><?php the_field('review_1_title'); ?></div>
                 <div class="text">
                     <?php the_field('review_1_text'); ?>
@@ -122,22 +122,22 @@
                 </div>
             </div>
             <div class="section__card" id="review-3">
-                <div id="bg-5_2" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-5.png" alt="bg_element-5"></div>
+                <div id="bg-5_2" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-5.png" alt="bg_element-5"></div>
                 <div class="title"><?php the_field('review_3_title'); ?></div>
                 <div class="text">
                     <?php the_field('review_3_text'); ?>
                 </div>
             </div>
             <div class="section__card" id="review-4">
-                <div id="bg-3_2" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-3.png" alt="bg_element-3"></div>
-                <div id="bg-4_3" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-4.png" alt="bg_element-4"></div>
+                <div id="bg-3_2" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-3.png" alt="bg_element-3"></div>
+                <div id="bg-4_3" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-4.png" alt="bg_element-4"></div>
                 <div class="title"><?php the_field('review_4_title'); ?></div>
                 <div class="text">
                     <?php the_field('review_4_text'); ?>
                 </div>
             </div>
             <div class="section__card" id="review-5">
-                <div id="bg-6_2" class="bg-element"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/background_elements/bg-6.png" alt="bg_element-6"></div>
+                <div id="bg-6_2" class="bg-element"><img src="<?php echo get_template_directory_uri(); ?> /images/background_elements/bg-6.png" alt="bg_element-6"></div>
                 <div class="title"><?php the_field('review_5_title'); ?></div>
                 <div class="text">
                     <?php the_field('review_5_text'); ?>
@@ -146,7 +146,6 @@
         </div>
     </div>
 </section>
-<?php wp_link_pages(); ?>
 </main>
 <script>
     let menuBtn = document.querySelector("#burger-menu");
