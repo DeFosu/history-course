@@ -119,6 +119,15 @@ section .container {
     margin-inline: auto;
 }
 
+.appBar {
+    position: absolute;
+    width: 100%;
+    height: 135px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
 .appBar .container {
     position: relative;
     z-index: 10;
@@ -188,7 +197,7 @@ li a:hover .hover {
 }
 
 #home {
-    padding-bottom: 273px;
+    padding-bottom: 408px;
 }
 
 #home .home__main {
