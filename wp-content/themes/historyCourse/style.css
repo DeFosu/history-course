@@ -107,10 +107,6 @@ section .container {
     position: relative;
 }
 
-.mobile {
-    display: none;
-}
-
 .container {
     width: 100%;
     max-width: 1257px;
@@ -612,6 +608,10 @@ section .container {
 #bg-6_2 {
     bottom: -27px;
     right: 27px;
+}
+
+.mobile {
+    display: none;
 }
 
 @media screen and (max-width: 1600px) {
