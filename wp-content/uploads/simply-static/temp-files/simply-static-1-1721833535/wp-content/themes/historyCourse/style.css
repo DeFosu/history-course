@@ -1,0 +1,960 @@
+/*
+Theme Name: History Course 
+Author: The DeFoSu
+Description: History Course Theme 
+Tags: blog, custom-image
+Version: 1.3
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: history-course
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@font-face {
+    font-family: "goosberry";
+    src: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/font/goosberry_version_02.otf);
+}
+
+@font-face {
+    font-family: "betterTogetherCaps";
+    src: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/font/BetterTogether-Caps.ttf);
+}
+
+:root {
+    --black: #000;
+    --dark: #2f2f2f;
+    --accent: #ef6e1c;
+    --white: #fff;
+    --mud: #725543;
+    --dust-storm: #e8d0c1;
+    --cosmic-latte: #fff8ea;
+    --font-size-base: 18px;
+    --font-size-h1-h2: 64px;
+    --font-size-nav: 2em;
+    --font-size-accent-button: 48px;
+    --font-size-section-text: 36px;
+    --font-size-advantages-number: 96px;
+    --font-size-reviews-title: 96px;
+}
+
+@media screen and (max-width: 900px) {
+    :root {
+        --font-size-h1-h2: 30px;
+        --font-size-accent-button: 24px;
+        --font-size-advantages-number: 64px;
+        --font-size-reviews-title: 48px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --font-size-base: 16px;
+        --font-size-h1-h2: 30px;
+        --font-size-nav: 1.5em;
+        --font-size-accent-button: 24px;
+        --font-size-section-text: 20px;
+        --font-size-advantages-number: 64px;
+        --font-size-reviews-title: 48px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "goosberry";
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: var(--font-size-base);
+    background-color: var(--cosmic-latte);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2 {
+    font-size: var(--font-size-h1-h2);
+    font-family: "betterTogetherCaps";
+    font-weight: 400;
+}
+
+b {
+    font-weight: normal;
+    color: var(--accent);
+}
+
+section .container {
+    position: relative;
+}
+
+.mobile {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1257px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-inline: auto;
+}
+
+.appBar .container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 46px 18px;
+}
+
+.appBar .container > div {
+    display: flex;
+    column-gap: 37px;
+    align-items: center;
+}
+
+header svg {
+    fill: var(--dark);
+}
+
+.nav ul {
+    display: flex;
+    font-size: var(--font-size-nav);
+    column-gap: 30px;
+    color: var(--dark);
+}
+
+.nav li {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul li a {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 14px;
+    white-space: nowrap;
+}
+
+.hover {
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    transition: all 0.3s;
+}
+
+li a:hover .hover {
+    opacity: 1;
+}
+
+#home h1 {
+    margin-top: 52px;
+}
+
+.accent-button {
+    margin-top: 91px;
+    font-size: var(--font-size-accent-button);
+    padding: 13px 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--accent);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.section__bg {
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/home-bg.png);
+    background-size: cover;
+}
+
+#home {
+    padding-bottom: 273px;
+}
+
+#home .home__main {
+    display: grid;
+    column-gap: 96px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#burger-menu {
+    border: none;
+    background: transparent;
+}
+
+#home .avatar {
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+#home .photo {
+    width: 100%;
+    height: 100%;
+}
+
+#home .avatar-frame {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    bottom: -111px;
+    left: -155px;
+}
+
+.section__title-1 h2,
+.section__title-2 h2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 4;
+}
+
+.section__title-1 h2 {
+    left: 0;
+    top: -293px;
+    width: 658px;
+    height: 227px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/section-title-1.png);
+}
+
+.section__title-2 h2 {
+    top: -100px;
+    right: 0;
+    width: 826px;
+    height: 264px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/section-title-2.png);
+}
+
+#about .container {
+    margin-top: 180px;
+    padding-bottom: 161px;
+    font-size: var(--font-size-section-text);
+}
+
+#about .section__text {
+    margin-top: 67px;
+    max-width: 790px;
+    overflow: hidden;
+}
+
+#about .section__collection {
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    align-items: center;
+}
+
+#about .section__card {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#about #card-1 {
+    width: 366px;
+    height: 121px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/about/1.png);
+}
+
+#about #card-2 {
+    width: 375px;
+    height: 116px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/about/2.png);
+}
+
+#about #card-3 {
+    padding: 0 8px 0 31px;
+    width: 384px;
+    height: 113px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/about/3.png);
+}
+
+#about #card-4 {
+    padding: 45px 0 0 22px;
+    width: 375px;
+    height: 204px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/about/4.png);
+}
+
+#about #card-5 {
+    padding: 8px 34px;
+    width: 375px;
+    height: 140px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/about/5.png);
+}
+
+#about #card-6 {
+    width: 376px;
+    height: 117px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/about/6.png);
+}
+
+#advantages .container {
+    padding: 215px 20px 162px;
+}
+
+#advantages .section__collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 20px;
+}
+
+#advantages .section__column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#advantages .section__card {
+    display: flex;
+    gap: 20px;
+}
+
+#advantages .section__card .number,
+#reviews .section__card .title {
+    font-family: "betterTogetherCaps";
+    font-weight: 400;
+    font-size: var(--font-size-advantages-number);
+    color: var(--accent);
+}
+
+#advantages .text {
+    font-size: var(--font-size-section-text);
+    margin-top: 12px;
+}
+
+#reviews .container {
+    margin-top: 165px;
+    padding-bottom: 184px;
+}
+
+#reviews .section__collection {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 663px 723px;
+    grid-template-rows: 494px 509px 620px;
+    row-gap: 32px;
+}
+
+#reviews .section__card .text {
+    font-size: var(--font-size-section-text);
+}
+
+#reviews .section__card {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: justify;
+}
+
+#reviews .section__card .text {
+    line-height: 100%;
+}
+
+#review-1 {
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/reviews/1.png);
+    width: 732px;
+    height: 494px;
+    padding: 91px 95px 57px 147px;
+}
+
+#review-2 {
+    margin-top: 225px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/reviews/2.png);
+    width: 723px;
+    height: 456px;
+    padding: 15px 95px 39px 116px;
+}
+
+#review-3 {
+    margin-left: 68px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/reviews/3.png);
+    width: 521px;
+    height: 509px;
+    padding: 99px 67px 127px 79px;
+}
+
+#review-4 {
+    margin-top: 187px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/reviews/1.png);
+    width: 732px;
+    height: 494px;
+    padding: 91px 95px 57px 147px;
+}
+
+#review-5 {
+    margin-left: 59px;
+    background-image: url(https://defosu.github.io/history-course/wp-content/themes/historyCourse/images/reviews/4.png);
+    width: 723px;
+    height: 620px;
+    padding: 92px 94px 106px 89px;
+}
+
+#burger-menu {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#burger-menu span {
+    width: 26px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    transition: all 0.5s;
+    border-radius: 8px;
+}
+
+#burger-menu span:nth-of-type(2) {
+    top: calc(50% - 10px);
+}
+
+#burger-menu span:nth-of-type(3) {
+    top: calc(50% + 10px);
+}
+
+#burger-menu.active {
+    position: fixed;
+    right: 21px;
+    top: 60px;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    padding: 20px;
+    background-color: var(--cosmic-latte);
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    z-index: 9;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu li {
+    list-style-type: none;
+}
+
+#burger-menu.active span:nth-of-type(1) {
+    opacity: 0;
+}
+
+#burger-menu.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+}
+
+#burger-menu.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.mobile-menu .nav.mobile ul {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.mobile-menu .social {
+    display: flex;
+    gap: 8px;
+}
+
+.main {
+    position: relative;
+}
+
+section {
+    position: relative;
+}
+
+section .container {
+    z-index: 2;
+}
+
+.section__bg {
+    position: relative;
+    z-index: 1;
+}
+
+#reviews .section__card {
+    position: relative;
+}
+
+.bg-element {
+    position: absolute;
+}
+
+.bg-element img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#bg-1_1 {
+    right: 380px;
+    top: -160px;
+    z-index: 1;
+}
+
+#bg-1_2 {
+    left: -210px;
+    top: -107px;
+    z-index: 1;
+}
+
+#bg-2_1 {
+    right: -400px;
+    top: -700px;
+    z-index: 0;
+}
+
+#bg-2_2 {
+    right: -400px;
+    top: -400px;
+    z-index: 0;
+}
+
+#bg-3_1 {
+    bottom: 14px;
+    right: -40px;
+}
+
+#bg-3_2 {
+    bottom: -28px;
+    right: -47px;
+}
+
+#bg-4_1 {
+    bottom: 14px;
+    right: 101px;
+}
+
+#bg-4_2 {
+    top: 282px;
+    right: 261px;
+    z-index: 4;
+}
+
+#bg-4_3 {
+    bottom: 3px;
+    right: 100px;
+}
+
+#bg-5_1 {
+    bottom: 191px;
+    left: 117px;
+}
+
+#bg-5_2 {
+    right: -42px;
+    bottom: -77px;
+}
+
+#bg-6_1 {
+    top: 146px;
+    right: 293px;
+    z-index: 4;
+}
+
+#bg-6_2 {
+    bottom: -27px;
+    right: 27px;
+}
+
+@media screen and (max-width: 1600px) {
+    #bg-6_1,
+    #bg-4_2 {
+        z-index: 0;
+    }
+
+    #bg-5_1 {
+        bottom: 230px;
+        left: -64px;
+        width: 74px;
+        height: 84px;
+    }
+
+    #bg-1_1 {
+        right: 125px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    #bg-1_1 {
+        width: 85px;
+        height: 174px;
+    }
+
+    #reviews .section__collection {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+        gap: 0;
+    }
+
+    #reviews > * {
+        margin: 0;
+    }
+
+    #review-2 {
+        margin-top: 20px;
+        z-index: 1;
+    }
+
+    #review-3 {
+        margin-top: -54px;
+    }
+
+    #review-4 {
+        margin-top: -48px;
+    }
+
+    #review-5 {
+        margin-top: 11px;
+    }
+
+    #bg-2_2 {
+        right: -400px;
+        top: -650px;
+        z-index: 0;
+    }
+
+    #bg-4_2 {
+        right: 249px;
+        top: 66px;
+        z-index: 0;
+    }
+
+    #bg-6_1 {
+        width: 47px;
+        height: 76px;
+        right: 364px;
+        top: -37px;
+    }
+
+    #bg-1_2 {
+        left: auto;
+        top: auto;
+        bottom: -293px;
+        right: 1px;
+        transform: rotate(-31deg);
+    }
+
+    #bg-5_2 {
+        left: -83px;
+        top: 13px;
+    }
+
+    #bg-3_2 {
+        top: 47px;
+        right: -21px;
+    }
+
+    #bg-4_3 {
+        top: 115px;
+        right: 127px;
+    }
+
+    #bg-6_2 {
+        bottom: -53px;
+        right: 61px;
+    }
+}
+@media screen and (max-width: 900px) {
+    #about .section__text {
+        max-width: 80%;
+    }
+
+    #bg-5_1 {
+        bottom: 168px;
+        left: -81px;
+    }
+    #home {
+        padding-bottom: 104px;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    #advantages .section__collection {
+        grid-template-columns: 1fr;
+    }
+
+    #home .home__main {
+        grid-template-columns: 1fr;
+    }
+
+    #home .home__main > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    #home h1 {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    #advantages .container {
+        padding: 215px 20px 162px;
+    }
+
+    #about .section__collection {
+        margin-top: 30px;
+    }
+
+    .appBar .container {
+        padding-top: 30px;
+        padding-bottom: 12px;
+        padding-inline: 8px;
+    }
+}
+@media screen and (max-width: 600px) {
+    #bg-1_1 {
+        width: 85px;
+        height: 174px;
+        top: 34px;
+        right: 51px;
+    }
+
+    #bg-2_1 {
+        width: 460px;
+        height: 264px;
+        top: -236px;
+        right: -256px;
+    }
+
+    #bg-3_1 {
+        width: 48px;
+        height: 74px;
+        bottom: -22px;
+        right: 14px;
+    }
+
+    #bg-4_1 {
+        width: 26px;
+        height: 27px;
+        bottom: 8px;
+        right: 60px;
+    }
+
+    #bg-1_2 {
+        left: auto;
+        top: auto;
+        bottom: 0px;
+        right: 82px;
+        transform: rotate(-31deg);
+        width: 128px;
+        height: 74px;
+    }
+
+    #bg-5_2 {
+        width: 113px;
+        height: 118px;
+        left: -31px;
+        top: 55px;
+    }
+
+    #bg-3_2 {
+        width: 61px;
+        height: 67px;
+        top: 41px;
+        right: 11px;
+    }
+
+    #bg-4_2 {
+        width: 28px;
+    }
+
+    #bg-4_3 {
+        width: 35px;
+        height: 38px;
+        top: 53px;
+        right: 62px;
+    }
+
+    #bg-6_2 {
+        width: 71px;
+        height: 114px;
+    }
+
+    #home .avatar-frame {
+        width: 190px;
+        height: 304px;
+        left: -30px;
+    }
+
+    #about .container {
+        padding-bottom: 105px;
+    }
+
+    #advantages .container {
+        padding: 99px 20px 80px;
+    }
+
+    .section__text,
+    .section__card,
+    #advantages .text,
+    #reviews .section__card .text {
+        font-size: var(--font-size-section-text);
+    }
+
+    #advantages .section__card .number {
+        font-size: var(--font-size-advantages-number);
+    }
+
+    #reviews .section__card .title {
+        font-size: var(--font-size-reviews-title);
+    }
+
+    #home h1,
+    .accent-button {
+        font-size: var(--font-size-accent-button);
+    }
+
+    h2 {
+        font-size: var(--font-size-h1-h2);
+    }
+
+    .section__title-1 h2 {
+        top: -120px;
+        width: 309px;
+        height: 104px;
+    }
+
+    .section__title-2 h2 {
+        top: -46px;
+        width: 320px;
+        height: 102px;
+    }
+
+    #about .container {
+        margin-top: 0;
+    }
+
+    #review-1 {
+        padding: 55px 56px 16px 48px;
+        width: 406px;
+        height: 276px;
+    }
+
+    #review-2 {
+        padding: 20px 68px 15px 59px;
+        width: 417px;
+        height: 263px;
+    }
+
+    #review-3 {
+        padding: 106px 51px 107px 56px;
+        width: 353px;
+        height: 360px;
+    }
+
+    #review-4 {
+        padding: 61px 32px 18px 93px;
+        width: 406px;
+        height: 276px;
+    }
+
+    #review-5 {
+        padding: 38px 44px 20px 30px;
+        width: 374px;
+        height: 321px;
+    }
+
+    #reviews .container {
+        margin-top: 63px;
+    }
+}
+@media screen and (max-width: 375px) {
+    #bg-1_1 {
+        top: 39px;
+        right: -6px;
+    }
+
+    #bg-6_1 {
+        right: 87px;
+        top: -19px;
+    }
+
+    #bg-4_2 {
+        right: 42px;
+        top: 42px;
+        z-index: 0;
+    }
+
+    #review-1 {
+        padding: 55px 66px 16px 58px;
+    }
+
+    #review-2 {
+        padding: 20px 68px 15px 59px;
+    }
+
+    #review-3 {
+        padding: 106px 71px 107px 56px;
+    }
+
+    #review-4 {
+        padding: 61px 62px 18px 53px;
+    }
+
+    #review-5 {
+        padding: 38px 74px 20px 10px;
+    }
+
+    #about .section__card {
+        margin-top: -30px;
+    }
+}
